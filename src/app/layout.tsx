@@ -7,6 +7,7 @@ import { AppHeader } from "@/shared/components/app-header";
 import { QueryProvider } from "@/shared/providers/query-provider";
 
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
               <SidebarInset>
                 <AppHeader />
                 <main className="p-8">{children}</main>
+                <Toaster richColors/>
               </SidebarInset>
             </SidebarProvider>
           </QueryProvider>

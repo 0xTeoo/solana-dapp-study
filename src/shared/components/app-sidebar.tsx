@@ -27,9 +27,16 @@ const data = {
           title: "Cluster",
           url: "/cluster",
         },
+      ],
+    },
+  ],
+  programs: [
+    {
+      title: "Programs",
+      items: [
         {
           title: "Basic Program",
-          url: "/basic-program",
+          url: "/programs/basic",
         },
       ],
     },
@@ -58,14 +65,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu className="gap-2">
-            {data.basics.map((item) => (
-              <SidebarMenuItem key={item.title}>
+            {[...data.basics, ...data.programs].map((section) => (
+              <SidebarMenuItem key={section.title}>
                 <SidebarMenuButton className="font-medium pointer-events-none">
-                  {item.title}
+                  {section.title}
                 </SidebarMenuButton>
-                {item.items?.length ? (
+                {section.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
-                    {item.items.map((item) => (
+                    {section.items.map((item) => (
                       <SidebarMenuSubItem key={item.title}>
                         <SidebarMenuSubButton asChild>
                           <a href={item.url}>{item.title}</a>
