@@ -1,4 +1,4 @@
-# legacy-solana-dapp-study
+# solana-dapp-study
 
 ## Getting Started
 
